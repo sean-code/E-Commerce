@@ -24,10 +24,14 @@ ActiveRecord::Schema.define(version: 2022_11_05_085220) do
     t.string "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_reviews_on_product_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
   end
 
+  add_foreign_key "reviews", "products"
+  add_foreign_key "reviews", "users"
 end
