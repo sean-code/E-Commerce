@@ -23,4 +23,11 @@ puts "Creating reviews..."
 # *****************************************************************
 # Create Reviews Here
 
+stapler = Review.create(product_id: product3.id, user_id: user3.id, star_rating: 5, comment: "Works awesome. Awesomely the best!")
+stapler = Review.create(product_id: product1.id, user_id: user1.id, star_rating: 4, comment: "I just love it")
+whiteboard = Review.create(product_id: product2.id, user_id: user1.id, star_rating: 3, comment: "Works as expected")
+tape = Review.create(product_id: product5.id, user_id: user2.id, star_rating: 4, comment: "I like it, except it took a long time to be delivered")
+stapler2 = Review.create(product_id: product1.id, user_id: user2.id, star_rating: 5, comment: "Comfortable on use. Thank you!")
+
+
 puts "Seeding done!"
