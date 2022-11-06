@@ -13,7 +13,14 @@ class Product < ActiveRecord::Base
     end
 
     def average_rating
-        self.reviews.average(:star_rating) #returns a float representing the average star rating for all reviews for this product
+        if self.reviews.count == 0
+          return  0
+        else
+           sum = 0
+           self.reviews.each do |review|
+              sum += review.star_rating
+           end
+        return sum / self.reviews.count
     end
 
 end
